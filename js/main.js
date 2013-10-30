@@ -6,6 +6,7 @@ define([
 	'handlebars',
 	'app',
 	'routers',
+	'common/templates'
 ], function (_, $, Foundation, Backbone, Handlebars, app, routers) {
 	app.topView = null;
 
