@@ -107,13 +107,6 @@ module.exports = function (grunt) {
 					src: getSrcFiles(['img/*.*']),
 					dest: destDir
 				}]
-			},
-			css: {
-				files: [{
-					expand: true,
-					src: getSrcFiles(['css/*.*']),
-					dest: destDir
-				}]
 			}
 		},
 
@@ -131,6 +124,14 @@ module.exports = function (grunt) {
 			all: getSrcFiles(['js/**/*.js', '!js/**/.*_compiled.js',
 				'!js/**/.auto_*.js', '!js/startup.js', '!js/text.js', '!**/.*' 
 			])
+		},
+
+		cssmin: {
+			minify: {
+				expand: true,
+				src: getSrcFiles(['css/*.*']),
+				dest: destDir
+			}
 		},
 
 		clean: {
@@ -152,11 +153,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.loadTasks('grunt_tasks');
 
 	grunt.registerTask('init', ['stylus', 'templates_debug', 'concat:startup', 'watch']);
-	grunt.registerTask('dist', ['clean', 'stylus', 'jshint', 'handlebars', 'concat', 'requirejs', 'copy', 'clean:temporary']);
+	grunt.registerTask('dist', ['clean', 'stylus', 'jshint', 'handlebars', 'concat', 'requirejs', 'copy', 'cssmin', 'clean:temporary']);
 	grunt.registerTask('default', ['dist', 'init']);
 
 	grunt.event.on('watch', function (action, filePath) {
