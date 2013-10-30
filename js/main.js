@@ -1,11 +1,12 @@
 define([
 	'lodash',
 	'jquery',
+	'foundation',
 	'backbone',
 	'handlebars',
 	'app',
 	'routers',
-], function (_, $, Backbone, Handlebars, app, routers, io) {
+], function (_, $, Foundation, Backbone, Handlebars, app, routers) {
 	app.topView = null;
 
 	_.each(routers, function (Router) {

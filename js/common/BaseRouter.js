@@ -9,13 +9,13 @@ define([
 			routeArguments = [].slice.apply(routeArguments || []);
 
 			// free app views
-			_.each(app.views, function (view) {
-				view.remove();
-			});
+			if (app.topView) {
+				app.topView.remove();
+			}
 
 			$('#main').removeClass();
 
-			app.views = [];
+			app.topView = null; 
 
 			var router = this;
 

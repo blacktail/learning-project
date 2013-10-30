@@ -2,7 +2,7 @@
 
 define(['lodash'], function (_) {
 	var app = {
-		views: []
+		topView: null
 	};
 
 	return app;
