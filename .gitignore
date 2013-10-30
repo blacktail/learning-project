@@ -1,0 +1,9 @@
+node_modules
+vendor
+.auto_*.js
+.*_compiled.js
+node_modules
+js/startup.js
+js/.startup.build.js
+*~*
+
