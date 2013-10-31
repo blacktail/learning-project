@@ -1,4 +1,5 @@
 define([
+	'modernizr',
 	'lodash',
 	'jquery',
 	'foundation',
@@ -7,7 +8,7 @@ define([
 	'app',
 	'routers',
 	'common/templates'
-], function (_, $, Foundation, Backbone, Handlebars, app, routers) {
+], function (Modernizr, _, $, Foundation, Backbone, Handlebars, app, routers) {
 	app.topView = null;
 
 	_.each(routers, function (Router) {
@@ -20,4 +21,6 @@ define([
 		pushState: false,
 		hashChange: true
 	});
+
+	$(document).foundation();
 });

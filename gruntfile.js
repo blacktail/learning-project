@@ -275,7 +275,7 @@ function getTemplatePathsConfig(type, isDebug) {
 
 function processHandlebarsTemplateName(isPartial) {
 	return function (filePath) {
-		var fileName = filePath.replace(new RegExp('^' + getSrcFile('scripts/')), '').replace(isPartial ? /templates\/partials\// : /templates\//, '').replace(/\..*$/, '');
+		var fileName = filePath.replace(new RegExp('^' + getSrcFile('js/')), '').replace(isPartial ? /templates\/partials\// : /templates\//, '').replace(/\..*$/, '');
 		return fileName.replace(/\/main$/, '');
 	};
 }

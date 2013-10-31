@@ -8,6 +8,7 @@ require.config({
 		'lodash': '../vendor/lodash/dist/lodash',
 		'backbone': '../vendor/backbone/backbone',
 		'handlebars': '../vendor/handlebars/handlebars',
+		'modernizr': '../vendor/modernizr/modernizr',
 		'foundation': '../vendor/foundation/js/foundation.min',
 		'common/partials_compiled': 'common/templates/.auto_partials',
 		'common/templates_compiled': 'common/templates/.auto_templates',
@@ -24,6 +25,9 @@ require.config({
 		'foundation': {
 			deps: ['jquery'],
 			exports: 'Foundation'
+		},
+		'modernizr': {
+			exports: 'Modernizr'
 		}
 	},
 
