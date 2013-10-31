@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "foundation": "git://github.com/blacktail/bower-foundation#~4.0.0",
+    "ztree": "git://github.com/blacktail/ztree#~3.5.0",
     "backbone": "~1.1.0",
     "handlebars": "~1.0.0",
     "jquery": "~2.0.3",

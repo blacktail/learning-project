@@ -7,7 +7,8 @@ define([
 	'handlebars',
 	'app',
 	'routers',
-	'common/templates'
+	'common/templates',
+	'ztree'
 ], function (Modernizr, _, $, Foundation, Backbone, Handlebars, app, routers) {
 	app.topView = null;
 

@@ -9,6 +9,7 @@ require.config({
 		'backbone': '../vendor/backbone/backbone',
 		'handlebars': '../vendor/handlebars/handlebars',
 		'modernizr': '../vendor/modernizr/modernizr',
+		'ztree': '../vendor/ztree/js/jquery.ztree.core-3.5',
 		'foundation': '../vendor/foundation/js/foundation.min',
 		'common/partials_compiled': 'common/templates/.auto_partials',
 		'common/templates_compiled': 'common/templates/.auto_templates',
@@ -28,6 +29,9 @@ require.config({
 		},
 		'modernizr': {
 			exports: 'Modernizr'
+		},
+		'ztree': {
+			deps: ['jquery']
 		}
 	},
 

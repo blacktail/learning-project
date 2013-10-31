@@ -6,7 +6,7 @@
 			<input id="searchBox" class="radius" placeholder="Search for a service">
 		</div>
 
-		<div id="servTreeCon">
+		<div id="servTreeCon" class="ztree">
 
 		</div>
 	</div>
