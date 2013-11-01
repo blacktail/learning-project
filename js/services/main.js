@@ -17,6 +17,6 @@ define([
 
 		
 		app.topView = servicesView;
-		console.log('services main.');
+		//console.log('services main.');
 	};
 });
