@@ -104,7 +104,7 @@ module.exports = function (grunt) {
 			imgs: {
 				files: [{
 					expand: true,
-					src: getSrcFiles(['img/*.*', 'css/img/**/*.*']),
+					src: getSrcFiles(['img/*.*', 'css/img/**/*.*', 'data_mock/*']),
 					dest: destDir
 				}]
 			}
