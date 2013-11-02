@@ -1,6 +1,6 @@
 define(['backbone', 'app'], function(Backbone, app) {
 	return Backbone.Model.extend({
-		urlRoot: app.ajaxBase + '/getService',
+		urlRoot: app.ajaxBase + 'service',
 		
 		url: function () {
 			var base = _.result(this, 'urlRoot') || _.result(this.collection, 'url') || urlError();

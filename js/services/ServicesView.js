@@ -37,7 +37,7 @@ define([
 				},
 				async: {
 					enable: true,
-					url: app.ajaxBase + "/getServiceNodes",
+					url: app.ajaxBase + "getServiceNodes",
 					autoParam: ["id", "name", "level"],
 					contentType: 'application/json',
 					type: 'get',

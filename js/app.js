@@ -2,7 +2,7 @@
 
 define(['lodash'], function (_) {
 	var app = {
-		ajaxBase: 'data_mock',
+		ajaxBase: '',
 		topView: null
 	};
 
