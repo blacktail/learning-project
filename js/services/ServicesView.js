@@ -94,15 +94,16 @@ define([
 				}
 
 				this.serviceItemModel.fetch();
+				this.listenTo(this.serviceItemView, 'service:deleted', this.onServiceDeleted);
 			} else {
 				this.serviceItemModel.set('isNew', true);
 			}
 
-			this.listenTo(this.serviceItemView, 'service:updated', this.onTreeNodeUpdated);
-			this.listenTo(this.serviceItemView, 'service:added', this.onTreeNodeAdded);
+			this.listenTo(this.serviceItemView, 'service:updated', this.onServiceUpdated);
+			this.listenTo(this.serviceItemView, 'service:added', this.onServiceAdded);
 		},
 
-		onTreeNodeUpdated: function(service) {
+		onServiceUpdated: function(service) {
 			var zTreeObj = $.fn.zTree.getZTreeObj('servTreeCon'),
 				node = zTreeObj.getNodesByFilter(function(node) {
 					return node.id == service.id;
@@ -115,7 +116,7 @@ define([
 			}
 		},
 
-		onTreeNodeAdded: function(service) {
+		onServiceAdded: function(service) {
 			var zTreeObj = $.fn.zTree.getZTreeObj('servTreeCon'),
 				node = zTreeObj.addNodes(null, {
 					id: service.id,
@@ -126,6 +127,17 @@ define([
 
 			if (node && node.length > 0) {
 				$('#' + node[0].tId + '_a').click();
+			}
+		},
+
+		onServiceDeleted: function(service) {
+			var zTreeObj = $.fn.zTree.getZTreeObj('servTreeCon'),
+				node = zTreeObj.getNodesByFilter(function(node) {
+					return node.id == service.id;
+				}, true);
+
+			if (node) {
+				zTreeObj.removeNode(node);
 			}
 		}
 	});

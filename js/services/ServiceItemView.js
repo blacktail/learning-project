@@ -12,7 +12,8 @@ define([
 
 		events: {
 			"click #reset": "resetServiceForm",
-			"click #submit": 'addOrUpdateService'
+			"click #submit": 'addOrUpdateService',
+			"click #delete": "deleteService"
 		},
 
 		initialize: function(options) {
@@ -24,6 +25,7 @@ define([
 					this.showTips(false, 'Network Error(status: ' + resp.status + '-' + resp.statusText + ')');
 				}
 			});
+			this.listenTo(this.model, 'destroy', this.onServiceDeleted);
 		},
 
 		render: function(model) {
@@ -54,6 +56,16 @@ define([
 					that.trigger(that.model.isNew ? 'service:added' : 'service:updated', that.model.toJSON());
 				}
 			});
+		},
+
+		deleteService: function() {
+			this.model.destroy({wait: true});
+		},
+
+		onServiceDeleted: function(model) {
+			this.remove();
+			console.log(this.model.toJSON(), model.toJSON());
+			this.triggler('service:deleted', model.toJSON());
 		},
 
 		showTips: function(success, msg) {

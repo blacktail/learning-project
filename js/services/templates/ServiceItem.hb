@@ -99,7 +99,11 @@
 				</div>
 
 				<div class="row">
-					<a id="submit" class="button small radius success">Submit</a> <a id="reset" class="button small radius secondary">Reset</a>
+					<a id="submit" class="button small radius success">Submit</a>
+					<a id="reset" class="button small radius secondary">Reset</a>
+					{{#unless isNew}}
+					<a id="delete" class="button small radius right">Delete</a>
+					{{/unless}}
 				</div>
 			</form>
 		</div>
